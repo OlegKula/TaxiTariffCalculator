@@ -5,10 +5,11 @@ package net.ukr.kekos222;
  */
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class TaxiRides {
 
-    private ArrayList<TaxiRide> rides = new ArrayList<>();
+    private List<TaxiRide> rides = new ArrayList<>();
 
     public void addRide(TaxiRide ride){
         rides.add(ride);
@@ -17,7 +18,7 @@ public class TaxiRides {
     public long getPrice(TaxiTariff tariff){
         long price = 0;
         for (TaxiRide r: rides) {
-            price = tariff.calculatePrice(r);
+            price += tariff.calculatePrice(r);
 
         }
         return price;
